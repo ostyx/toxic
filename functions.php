@@ -20,6 +20,10 @@ wp_enqueue_script( 'jquery' );
 wp_register_script( 'generic-videos', get_template_directory_uri() . '/js/videos.js' );
 wp_enqueue_script( 'generic-videos' );
 wp_add_inline_script( 'generic-videos', 'jQuery(document).ready(function($){$("#wrapper").vids();});' );
+wp_register_script( 'custom-scipts', get_template_directory_uri() . '/js/scripts.js' );
+wp_enqueue_script( 'custom-scipts' );
+
+
 }
 add_action( 'wp_footer', 'generic_footer' );
 function generic_footer() {
@@ -127,6 +131,10 @@ unset( $sizes['1536x1536'] );
 unset( $sizes['2048x2048'] );
 return $sizes;
 }
+
+
+
+
 add_action( 'widgets_init', 'generic_widgets_init' );
 function generic_widgets_init() {
 register_sidebar( array(
