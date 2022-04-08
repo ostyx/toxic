@@ -45,10 +45,10 @@
 				
 <?php wp_head(); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/boxes.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/mobile.css"/>
 
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
 
 
 <div id="wrapper" class="hfeed">
@@ -58,7 +58,7 @@
 	<div class="container">
 		
 		<div class="logo">
-			<div class="logo_light"><span>Toxic Free</span> Food Packaging</div>
+			<a href="/" class="logo_light"><span>Toxic Free</span> Food Packaging</a>
 		</div>
 		
 		<div class="header-right">
@@ -75,15 +75,109 @@
 			</div>
 		
 			<div class="take-action-head">
-				<a href="/take-action">TAKE ACTION</a>
+				<a class="take-action-head green-button coolBeans" href="#">TAKE ACTION</a>
+
 			</div>
 			
-			<div class="mobile-menu">
-				<button type="button" class="menu-toggle"><span class="menu-icon">&#9776;</span><span class="menu-text screen-reader-text"><?php esc_html_e( ' Menu', 'generic' ); ?></span></button>
-			</div>
 		</div>
+		<div class="mobile-menu">
+			
+    <label for="check">
+      <input type="checkbox" id="check"/> 
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+		
+		
+
+		
+			
+			
+		</div>
+		
 	</div>	
 </header>
+
+	<div class="mobile-menu-container" id="mobile-menu-container">
+		<div class="mobile-menu-container-inner">
+		<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'link_before' => '<span itemprop="name">', 'link_after' => '</span>' ) ); ?>
+		
+		<div class="mobile-lang-switch">
+			<p id="lenopener">Language</p>
+		</div>
+		
+		<div class="mobile-lang-menu" id="mobile-lang-menu">
+			<p id="lencloser">Language</p>
+			
+			<a href="">ENGLISH</a>
+			<a href="">GERMAN</a>
+		
+		
+		
+		</div>
+		
+		
+		
+		</div>
+	</div>	
+
+
+
+<script>
+	
+
+function mobilemenu() {
+	
+	var p = document.getElementById("mobile-menu-container"); // get a reference to p and cache it
+
+function show() {
+  p.classList.toggle('hideP'); // toggle the hideP class
+}
+
+document.getElementById('check').addEventListener('click', show); // add an event listener to the button
+
+	
+};
+	
+
+function mobilelang() {
+
+var pe = document.getElementById("mobile-lang-menu"); // get a reference to p and cache it
+
+function show() {
+  pe.classList.toggle('hideM'); // toggle the hideP class
+}
+
+document.getElementById('lenopener').addEventListener('click', show); // add an event listener to the button
+document.getElementById('lencloser').addEventListener('click', show); // add an event listener to the button
+};
+
+
+
+
+mobilemenu();
+
+mobilelang();
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

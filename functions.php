@@ -11,8 +11,15 @@ add_theme_support( 'html5', array( 'search-form' ) );
 add_theme_support( 'woocommerce' );
 global $content_width;
 if ( !isset( $content_width ) ) { $content_width = 1920; }
-register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'generic' ) ) );
+register_nav_menus( array( 
+'main-menu' => esc_html__( 'Main Menu', 'generic' ), 
+'footer-menu' => esc_html__( 'Footer Menu', 'generic' )
+
+) );
 }
+
+
+
 add_action( 'wp_enqueue_scripts', 'generic_enqueue' );
 function generic_enqueue() {
 wp_enqueue_style( 'generic-style', get_stylesheet_uri() );
@@ -106,10 +113,7 @@ function generic_wp_body_open() {
 do_action( 'wp_body_open' );
 }
 }
-add_action( 'wp_body_open', 'generic_skip_link', 5 );
-function generic_skip_link() {
-echo '<a href="#content" class="skip-link screen-reader-text">' . esc_html__( 'Skip to the content', 'generic' ) . '</a>';
-}
+
 add_filter( 'the_content_more_link', 'generic_read_more_link' );
 function generic_read_more_link() {
 if ( !is_admin() ) {

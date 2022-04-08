@@ -1,0 +1,374 @@
+
+@media only screen and (max-width: 1440px){
+	.container{
+		max-width: 1400px;
+		
+	} 
+
+
+}
+
+@media only screen and (max-width: 1320px){
+	
+	.logo_light{
+		font-size: 1.2rem;
+		min-width: 16rem;;
+	}
+	.footer-logo{
+		padding: 1rem;
+		min-width: 274px
+	}
+	.footer-content {
+		padding: 2rem;
+	}
+	
+	
+	
+}
+
+
+
+@media only screen and (max-width: 1200px){
+	
+	.container{
+		max-width: 1400px;
+	} 
+	.logo_light{
+		font-size: 1rem;
+		min-width: 14rem;
+	}
+	nav .menu-main-container .menu li a span{
+		font-size: 13px;
+	}
+	.lang-search .lang-switch a{
+	font-size: 13px;
+	}
+	.green-button{
+		font-size: .7rem;
+		padding: 18px 31px;	
+	}
+	.take-action-head {
+		min-width: 148px;
+	}
+	.take-action-head a{
+		padding: 18px 31px;
+	}
+	.footer-container{
+		flex-wrap: wrap;
+	}	 
+	.footer-content{
+		width: 100%;
+	}
+	.footer-form {
+		width: 100%;
+		height: 300px;
+		border-left: 0;
+		border-top: 0.7rem solid #9CED74;
+	}	
+	
+		
+} 
+  
+@media only screen and (min-width: 1090px){
+	  
+	.mobile-menu-container{
+		display: none;
+	}	  
+	  
+}
+ 
+@media only screen and (max-width: 1090px){
+	
+	.mobile-menu{
+		display: block;
+	} 
+
+	.homepage-header{
+		background: #15326B;
+		z-index: 99999;
+	}
+	.header{
+		box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.15);
+	}
+	.header .container{
+		padding: 1rem ;
+		border: 0;
+	}
+	.logo_light{
+		font-size: 1.4rem;
+	}
+	.header-right{
+		display: none;
+	}
+
+
+		
+}
+
+
+@media only screen and (max-width: 960px){
+		
+	h3{
+		font-size: 1.2rem;
+	}
+	.accordion-container {
+		padding: 1.5rem 1rem;
+	}
+	.accordion h3{
+		padding-right: 1rem;
+	}
+	.accordion-icon, .accordion-icon img{
+		width:85px;
+		height: 85px;
+	}
+	.accordion-inner {
+		width: calc(100% - 113px);
+	}	
+	.side-by-side {
+		padding: 3.5rem 0 ;
+	}
+	.side-by-side .box-2{
+		align-items: center !important;
+	}
+	.paddedBox {
+		padding-bottom: 3.6rem;
+	}
+	.side-by-side .half-scren-right{
+		position: relative;
+		width: 100%;
+		top:0;	
+	}
+	.side-by-side .half-scren-right img{
+		max-width: 85%;
+		margin: 0 auto;
+		display: block;
+	}
+	.roadblock{
+		padding: 3rem 1rem;
+	}
+	.roadblock-inner{
+		
+	}
+	.roadblock-icon img {
+		width: 90px;
+	}
+
+
+}
+
+
+@media only screen and (max-width: 768px){
+
+	h1{
+		 font-size: 1.5rem;
+		 margin-bottom: 1rem;
+	}
+	h2{
+		 font-size: 1.4rem;
+		 margin-bottom: 1rem;
+	}	 
+	blockquote{
+		 font-size: .95rem;
+		 padding: 0 15px;
+		 margin: 15px 0;
+	}
+	 p{
+		font-size: .87rem;
+		margin: 15px 0; 
+	}
+	.logo_light{
+		font-size: 1.1rem;
+	}
+	.home-fold{
+		height: 95vh;
+	}
+	.home-slider .home-slide .slide-inner, .slider-controls-container{
+		background: #15326B;
+	}
+	.home-slider .home-slide .slide-background{
+		height: 63vh;
+		align-self: flex-start;
+	}
+	.home-slider .home-slide .slide-inner .slide-inner-content{
+		margin-bottom: 1rem;
+		width: 100%;
+		max-width: 35rem;
+		height: 20rem;
+		padding-top: 1rem;
+	}
+	.slider-controls-container{
+		bottom: 21rem;
+	}
+	.slider-controls{
+		width: 100%;
+		padding: 2rem 0;
+	}
+	.home-slider .home-slide p{
+		font-size: .95rem;
+		margin-top: 0px;
+	}	
+    #content, #sidebar{
+        width:100%;
+        padding:0
+    }
+    #branding, #menu, #menu div:first-of-type, #search{
+        float:none
+    }
+    #search{
+        margin-top:20px
+    }
+    #search .search-field{
+        width:100%;
+        color:#fff;
+        border-color:#8a8a8a;
+        cursor:text
+    }
+    #search .search-field:focus{
+        width:100%
+    }
+    #menu.toggled{
+        width:100%;
+        height:100%;
+        bottom:0;
+        overflow-x:hidden;
+        overflow-y:auto;
+        z-index:1000
+    }
+    #menu .menu-toggle{
+        display:inline-block
+    }
+    #menu ul{
+        display:none
+    }
+    #menu.toggled ul, #menu.toggled ul.sub-menu, #menu.toggled ul.children{
+        display:block;
+        position:relative;
+        top:0;
+        left:0;
+        padding:0 0 10px 0;
+        margin:0
+    }
+    #menu.toggled ul.sub-menu, #menu.toggled ul.children{
+        padding-bottom:0
+    }
+    #menu.toggled a, #menu.toggled ul.sub-menu a, #menu.toggled ul.children a{
+        display:inline-block;
+        width:100%;
+        font-size:18px;
+        color:#fff;
+        text-align:center;
+        line-height:20px;
+        padding:15px 0 5px;
+        border:0;
+        margin:0;
+        background:none
+    }
+    #menu.toggled ul.sub-menu a, #menu.toggled ul.children a{
+        color:#ccc
+    }
+    .footer-content{
+	    flex-wrap: wrap;
+	    padding: 2rem;
+    }
+    .footer-logo{
+	    min-width: auto;
+    }
+/*
+    .footer-logo, .footer-menu{
+	    width: 50%;
+    }
+    .footer-logos-grid{
+	    width: 100%;
+    }
+*/
+    .footer-logos-grid{
+		margin: 2rem 0;
+	}
+        
+    
+    
+
+}
+ @media(max-width:767px){
+	 
+/*
+    .single .nav-links .nav-previous, .single .nav-links .nav-next{
+        float:none
+    }
+*/
+
+}
+
+
+
+@media only screen and (max-width: 576px){
+    
+    
+    section{
+	    padding:3.5rem 0; 
+    }   
+	.home-slider .home-slide .slide-inner .slide-inner-content{
+		margin-bottom: 1rem;
+		width: 100%;
+		max-width: 35rem;
+		height: 18rem;
+		padding-top: 1rem;
+	}   
+   
+   .slider-controls-container{
+	   bottom: 19rem;
+   }
+    
+   .layer{
+        padding:10%
+   }
+   .wp-caption, input, textarea, .button{
+        width:100% !important
+   }
+   input[type="checkbox"], input[type="radio"]{
+        width:auto !important
+   }
+   .spacer{
+        display:block;
+        width:100%
+   }
+   .accordion-container{
+	    flex-wrap: wrap;
+   }
+   .accordion-icon{
+	    width: 100%;
+	    text-align: center;
+   }
+   .accordion-inner{
+	    width: 100%;
+   }
+   .panel{
+	    padding-right: 0;
+   } 
+   .roadblock-container{
+	    flex-wrap: wrap;
+   }
+   .roadblock-icon img {
+		width: 70px;
+	}
+	.roadblock-icon{
+		width: 100%;
+		justify-content: center;
+	}
+	.roadblock-content{
+		width: 100%;
+		max-width: 100%;
+		
+	}
+	.side-by-side.big{
+		padding: 3.5rem 0; 
+	}
+	
+	.footer-content{
+		padding: 0;
+	}
+	.footer-logo, .footer-menu{
+		width: 100%;
+	}
+	
+}

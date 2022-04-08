@@ -102,16 +102,7 @@
 	.box-2{
 		width: 100%;
 	}
-	.side-by-side {
-		padding: 3.5rem 0 ;
-	}
-	.side-by-side .box-2{
-		align-items: center !important;
-	}
-	.paddedBox {
-		padding-bottom: 3.6rem;
-	}
-
+	
 
 
 
@@ -129,9 +120,14 @@
     .box-3{
         width:50%
     }
-    .boxes .box-3:nth-child(3){
+    .box-3:nth-child(3){
         width:100%
     }
+    
+    
+    
+    
+    
 }
 
 
