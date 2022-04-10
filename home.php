@@ -49,6 +49,34 @@
 </div>	
 
 
+
+		
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/slick.min.js"></script>
+
+<script>
+$('.home-slider').slick({
+		  dots:true,
+		  arrows:true,
+	  infinite: true,
+	  speed: 300,
+	  slidesToShow: 1,
+	  autoplay: true,
+	  autoplaySpeed: 8000,
+	  appendArrows: '.slider-arrows',
+	  appendDots: '.slider-dots'
+});
+
+
+
+
+</script>
+
+
+
+
+
 <?php if( have_rows('core_organizations') ): ?>
     <?php while( have_rows('core_organizations') ): the_row();?>	    
 		<section class="side-by-side">
@@ -252,7 +280,6 @@
 <?php endif; ?>		
 		
 
-		
 		
 		
 		

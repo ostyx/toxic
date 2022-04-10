@@ -107,18 +107,21 @@
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/slick.min.js"></script>
 
 <script>
-$('.home-slider').slick({
-	  infinite: false,
-	  speed: 300,
-	  autoplay: true,
-	  autoplaySpeed: 2000,
-	  appendArrows: '.slider-arrows',
-	  appendDots: '.slider-dots',
-	  dots:true,
+
+
+$('.logo-slider_container-slider').slick({
+	  infinite: true,
+	  appendArrows: '.logo-slider-arrows',
+	  dots:false,
+	  slidesToShow: 6,
+	  slidesToScroll: 2,
+	  useCSS: false
 });
+
+
 </script>
 
 
