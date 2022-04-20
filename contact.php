@@ -1,54 +1,36 @@
-<?php /* Template Name: About us */ ?>
+<?php /* Template Name: Contact */ ?>
 <?php get_header(); ?>
 
 <div id="container" class="page_container">
 	<main  role="main">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
+		
 	<?php include get_theme_file_path( 'partials/blue-intro.php' ); ?>
 
 
 
-
-<?php if( have_rows('side_by_side') ): ?>
-    <?php while( have_rows('side_by_side') ): the_row();?>		
-
-		<section class="side-by-side big">
-			<div class="container flex">
+		<section class="side-by-side contactBlock">
+			<div class="container flex sixty-forty">
+						
 							
 					<div class="box-2 flex flow-column">
-						<div class="paddedBox">
-							
-						<h2><?php the_sub_field('title'); ?></h2>	
-									
-						<blockquote>
-							<?php the_sub_field('quote'); ?>
-						</blockquote>
-						
-						<p><?php the_sub_field('text'); ?></p>
-						
-						
-						<?php $name = get_sub_field('side_by_side');
-							if (get_sub_field('button_text')) { ?>						
-						
-							<a class="take-action-head green-button coolBeans" href="<?php the_sub_field('button_link'); ?>"><?php the_sub_field('button_text'); ?></a>
-						
-						<?php } else {
-							 echo $name;
-						} ?>
-						
-						</div>
+						<?php  echo do_shortcode('[contact-form-7 id="354" title="Contact form 1"]'); ?> 
 					</div>
 		
-					<div class="box-2 flex flow-column"></div>
+		
+		
+					<div class="box-2 flex flow-column">
+						<div class="paddedBox contactImage">
+							<img src="<?php echo get_stylesheet_directory_uri() ?>/images/envelopes.png"/>								
+						</div>
+					</div>
+					
 										
-			</div>
-			
-			<div class="half-scren-right"><img src="<?php the_sub_field('image'); ?>"/></div>
+			</div>			
 		</section>	
 		
-	    <?php endwhile; ?>
-<?php endif; ?>	
+
 
 
 
@@ -116,8 +98,7 @@
 					
 			<div class="logo-slider">
 				<div class="logo-slider_container">
-
-					<div class="owl-carousel">
+					<div class="logo-slider_container-slider">
 						<?php if( have_rows('logos') ): ?>
 							<?php while( have_rows('logos') ): the_row(); ?>
 							    
@@ -128,7 +109,7 @@
 							    
 							<?php endwhile; ?>
 						<?php endif; ?>				
-
+					</div>
 			</div>
 		</div>
 
@@ -172,5 +153,9 @@
 		
 	<?php endwhile; endif; ?>
 	</main>
-</div>	
+</div>
+
+
+
+	
 <?php get_footer(); ?>

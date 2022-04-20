@@ -1,4 +1,4 @@
-<?php /* Template Name: About us */ ?>
+<?php /* Template Name: All About */ ?>
 <?php get_header(); ?>
 
 <div id="container" class="page_container">
@@ -10,10 +10,79 @@
 
 
 
-<?php if( have_rows('side_by_side') ): ?>
-    <?php while( have_rows('side_by_side') ): the_row();?>		
+	<?php if( have_rows('switcher') ): ?>
+	<?php while( have_rows('switcher') ): the_row();?>	
+	<section>
+		<div class="container">
+			<h2><?php the_sub_field('title'); ?></h2>	
+			
+			<div class="side-tab-container">
+				<div class="side-tab">
+					
+			<?php if( have_rows('blocks') ): $count = 0; ?>
+			    <?php while( have_rows('blocks') ): the_row(); ?>
+			    			
+				  <button class="tablinks" onclick="openCity(event, '<?php the_sub_field('block_title'); ?>')" <?php  if (!$count) {?>id="defaultOpen"<?php }?>><?php the_sub_field('block_title'); ?></button>
+			
+			<?php $count++; endwhile; endif; ?>
+				
+		</div>
+		
+			
+			
+			<div class="tabcontent__container">
+			<?php if( have_rows('blocks') ): $count = 0; ?>
+			<?php while( have_rows('blocks') ): the_row(); ?>
+			    	
+				<div id="<?php the_sub_field('block_title'); ?>" class="tabcontent">
+				  <?php the_sub_field('content'); ?>
+				</div>
+				
+			<?php $count++; endwhile; endif; ?>
+			</div>
+</div>	
 
-		<section class="side-by-side big">
+
+	
+	
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<!-- Tabs https://www.w3schools.com/howto/howto_js_vertical_tabs.asp	-->
+
+	</div>
+</section>
+	    <?php endwhile; ?>
+<?php endif; ?>	
+
+
+
+
+
+
+<?php 
+	$count = 0;
+	if( have_rows('side_by_side') ):  
+	while( have_rows('side_by_side') ): the_row();
+    ?>		
+
+		<section class="side-by-side big <?php  if ($count % 2 === 0) {?>oddsider<?php }?>">
 			<div class="container flex">
 							
 					<div class="box-2 flex flow-column">
@@ -29,14 +98,16 @@
 						
 						
 						<?php $name = get_sub_field('side_by_side');
-							if (get_sub_field('button_text')) { ?>						
+							if (get_sub_field('button_text')) { ?>
 						
-							<a class="take-action-head green-button coolBeans" href="<?php the_sub_field('button_link'); ?>"><?php the_sub_field('button_text'); ?></a>
 						
-						<?php } else {
-							 echo $name;
-						} ?>
 						
+						<a class="take-action-head green-button coolBeans" href="<?php the_sub_field('button_link'); ?>"><?php the_sub_field('button_text'); ?></a>
+						
+						 <?php 
+} else {
+  echo $name;
+} ?>
 						</div>
 					</div>
 		
@@ -47,7 +118,24 @@
 			<div class="half-scren-right"><img src="<?php the_sub_field('image'); ?>"/></div>
 		</section>	
 		
-	    <?php endwhile; ?>
+		
+
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+	
+		
+	    <?php $count++; endwhile; ?>
 <?php endif; ?>	
 
 
@@ -116,8 +204,7 @@
 					
 			<div class="logo-slider">
 				<div class="logo-slider_container">
-
-					<div class="owl-carousel">
+					<div class="logo-slider_container-slider">
 						<?php if( have_rows('logos') ): ?>
 							<?php while( have_rows('logos') ): the_row(); ?>
 							    
@@ -128,7 +215,7 @@
 							    
 							<?php endwhile; ?>
 						<?php endif; ?>				
-
+					</div>
 			</div>
 		</div>
 
@@ -139,33 +226,8 @@
 
 
 
-<?php if( have_rows('hero') ): ?>
-    <?php while( have_rows('hero') ): the_row();?>
-<div class="roadblock">
-	<div class="roadblock-bakground"><img class="" src="<?php the_sub_field('background'); ?>"/></div>
-	
-	<div class="roadblock-inner">
-		<div class="roadblock-container">
-			
-			<div class="roadblock-icon">
-				<img src="<?php the_sub_field('icon'); ?>"/>
-			</div>
-			
-			<div class="roadblock-content">
-				<h2><?php the_sub_field('heading'); ?></h2>
-				<p class="xtrlarge"><?php the_sub_field('text'); ?></p>
-				<a class="take-action-head green-button coolBeans" href="<?php the_sub_field('button_link'); ?>"><?php the_sub_field('button_text'); ?></a>				
-			</div>
-			
-		</div>
 		
-	</div>		
-</div>			
-    <?php endwhile; ?>
-<?php endif; ?>	
-
-		
-
+	<?php include get_theme_file_path( 'partials/hero.php' ); ?>
 		
 		
 		

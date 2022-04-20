@@ -1,13 +1,9 @@
 <footer id="footer" class="footer" role="contentinfo">
-			
-			
-			
-			
+				
 			<div class="footer-container">
 				
 				<div class="footer-content">
-					
-					
+									
 					<div class="footer-logo box-3">
 						<div class="footer-name">
 							<h3>Toxic Free<br>
@@ -60,7 +56,23 @@
 				</div>					
 
 				<div class="footer-form">
+					<a href="#" class="back-to-top"></a>
 					
+					<div class="box">
+						<svg width="50" height="42" viewBox="0 0 50 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.9">
+<path d="M48.7571 12.5292L48.7579 12.5234L48.7414 12.5127L48.7385 12.5098L48.7352 12.509L41.9335 8.21389V1.23347C41.9339 0.906003 41.8038 0.592169 41.5726 0.360919C41.3413 0.129669 41.0275 0 40.7005 0H8.63309C8.30603 0 7.99219 0.129669 7.76094 0.360919C7.52969 0.592169 7.39961 0.906003 7.40002 1.23347V8.21389L0.597943 12.5094L0.59464 12.5102L0.591749 12.5131L0.575231 12.5238L0.576883 12.5288H0.577296C0.219686 12.753 0.00206241 13.1445 9.80556e-07 13.5665V40.7002C-0.000412045 41.0273 0.12967 41.3411 0.36092 41.5723C0.59217 41.804 0.906004 41.9337 1.23306 41.9337H48.1004C48.4275 41.9337 48.7413 41.804 48.9726 41.5723C49.2038 41.3411 49.3339 41.0273 49.3335 40.7002V13.5665C49.3314 13.1449 49.1138 12.7538 48.757 12.5292L48.7571 12.5292ZM45.6376 13.4699L41.9335 15.4194V11.131L45.6376 13.4699ZM39.467 2.46608V16.7164L24.667 24.5054L9.867 16.7164V2.46608H39.467ZM7.40068 15.4192L3.69656 13.4698L7.40068 11.1308V15.4192ZM46.867 39.4661H2.467V15.6085L24.093 26.9907C24.4514 27.1811 24.8813 27.1811 25.2398 26.9907L46.8668 15.6085L46.867 39.4661Z" fill="#9CED73"/>
+<path d="M16.0338 9.86692H33.3012C33.9822 9.86692 34.5343 9.3148 34.5343 8.63386C34.5343 7.9525 33.9822 7.40039 33.3012 7.40039H16.0338C15.3529 7.40039 14.8008 7.9525 14.8008 8.63386C14.8008 9.31481 15.3529 9.86692 16.0338 9.86692Z" fill="#9CED73"/>
+<path d="M16.0338 14.8005H33.3012C33.9822 14.8005 34.5343 14.2484 34.5343 13.567C34.5343 12.8861 33.9822 12.334 33.3012 12.334H16.0338C15.3529 12.334 14.8008 12.8861 14.8008 13.567C14.8008 14.2484 15.3529 14.8005 16.0338 14.8005Z" fill="#9CED73"/>
+</g>
+</svg>
+
+					<div class="form-action-text">
+						
+						<h3>Suscribe to our Newsletter!</h3>
+						<p>lorem ipsum</p>
+					</div>
+					</div>
 					
 					
 				</div>	
@@ -91,7 +103,7 @@
 			</div>	
 			
 			<div class="footer-credit flex centered">
-				<p>Website by</p> <img src="http://localhost:8888/toxic/wp-content/uploads/2022/04/onebigZero.png"/>
+				<p>Website designed by</p> <img src="<?php echo get_stylesheet_directory_uri() ?>/images/onebigZero.png"/>
 			</div>
         </div>
 		</div>	
@@ -108,22 +120,72 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/slick.min.js"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/owl.carousel.min.js"></script>
 
 <script>
 
+// Supporting organizations carousel
 
-$('.logo-slider_container-slider').slick({
-	  infinite: true,
-	  appendArrows: '.logo-slider-arrows',
-	  dots:false,
-	  slidesToShow: 6,
-	  slidesToScroll: 2,
-	  useCSS: false
+// https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html
+
+$(document).ready(function(){
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    items:7,
+    margin:0,
+    nav:true,
+    navContainer:'.logo-slider-arrows',
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    },
+    lazyLoad: false,
+		 		  
+	  }
+  );
 });
 
 
-</script>
 
+
+
+
+$(document).ready(function(){
+  $('.news-slider_container-slider').owlCarousel({
+    loop:true,
+    items:7,
+    margin:10,
+    nav:true,
+    navContainer:'.logo-slider-arrows',
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:7
+        }
+    },
+    lazyLoad: false,
+		 		  
+	  }
+  );
+});
+
+
+
+
+
+</script>
 
 
 

@@ -5,7 +5,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <meta name="description" content="<?php if ( is_single() ) { echo wp_strip_all_tags( get_the_excerpt(), true ); } else { bloginfo( 'description' ); } ?>" />
 <meta name="keywords" content="<?php echo implode( ', ', wp_get_post_tags( get_the_ID(), array( 'fields' => 'names' ) ) ); ?>" />
 <meta property="og:image" content="<?php if ( is_single() && has_post_thumbnail() ) { the_post_thumbnail_url( 'full' ); } elseif ( has_site_icon() ) { echo get_site_icon_url(); } ?>" />
@@ -47,18 +50,26 @@
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/boxes.css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/mobile.css"/>
 
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/css/owl.carousel.min.css"/>
+
+
+
 </head>
 <body <?php body_class(); ?>>
 
 
 <div id="wrapper" class="hfeed">
 
-<header id="header" role="banner" class="header <?php
-	if ( is_front_page() || is_home() || is_front_page() && is_home() ) {echo 'homepage-header';} ?>">
+<header id="header" role="banner" class="header <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) {echo 'homepage-header';} else {echo 'blue-head'; } ?>">
+		
+		
+		
+		
+		
 	<div class="container">
 		
 		<div class="logo">
-			<a href="/" class="logo_light"><span>Toxic Free</span> Food Packaging</a>
+			<a href="<?php echo site_url(); ?>" class="logo_light"><span>Toxic Free</span> Food Packaging</a>
 		</div>
 		
 		<div class="header-right">
@@ -75,7 +86,7 @@
 			</div>
 		
 			<div class="take-action-head">
-				<a class="take-action-head green-button coolBeans" href="#">TAKE ACTION</a>
+				<a class="take-action-head green-button coolBeans" href="<?php echo site_url(); ?>/take-action">TAKE ACTION</a>
 
 			</div>
 			
@@ -96,10 +107,8 @@
 			
 		</div>
 		
-	</div>	
-</header>
-
-	<div class="mobile-menu-container" id="mobile-menu-container">
+	</div>
+		<div class="mobile-menu-container" id="mobile-menu-container">
 		<div class="mobile-menu-container-inner">
 		<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'link_before' => '<span itemprop="name">', 'link_after' => '</span>' ) ); ?>
 		
@@ -121,6 +130,9 @@
 		
 		</div>
 	</div>	
+</header>
+
+	
 
 
 

@@ -1,13 +1,19 @@
 <?php get_header(); ?>
-<main id="content" role="main">
-<article id="post-0" class="post not-found">
-<header class="header">
-<h1 class="entry-title" itemprop="name"><?php esc_html_e( 'Not Found', 'generic' ); ?></h1>
-</header>
-<div class="entry-content" itemprop="mainContentOfPage">
-<p><?php esc_html_e( 'Nothing found for the requested page. Try a search instead?', 'generic' ); ?></p>
-<?php get_search_form(); ?>
+<div class="fullpage-container" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/images/food-boxs.jpg')">
+
+<div class="background-image"></div>
+
+<div class="error-content">
+<h1 class="entry-title title_404" itemprop="name">404</h1>
+
+<p class="xtrlarge"><?php esc_html_e( 'Page not found. Try a search instead?', 'generic' ); ?></p>
+
+<a href="<?php echo site_url(); ?>" class="green-button coolBeans">GO HOME</a>
+
+
 </div>
-</article>
-</main>
+
+
+
+</div>
 <?php get_footer(); ?>

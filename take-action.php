@@ -1,54 +1,83 @@
-<?php /* Template Name: About us */ ?>
+<?php /* Template Name: Take Action */ ?>
 <?php get_header(); ?>
 
 <div id="container" class="page_container">
 	<main  role="main">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
+		
 	<?php include get_theme_file_path( 'partials/blue-intro.php' ); ?>
 
 
 
-
-<?php if( have_rows('side_by_side') ): ?>
-    <?php while( have_rows('side_by_side') ): the_row();?>		
-
-		<section class="side-by-side big">
+		<section class="side-by-side blue-content">
 			<div class="container flex">
 							
 					<div class="box-2 flex flow-column">
-						<div class="paddedBox">
-							
-						<h2><?php the_sub_field('title'); ?></h2>	
-									
-						<blockquote>
-							<?php the_sub_field('quote'); ?>
-						</blockquote>
-						
-						<p><?php the_sub_field('text'); ?></p>
-						
-						
-						<?php $name = get_sub_field('side_by_side');
-							if (get_sub_field('button_text')) { ?>						
-						
-							<a class="take-action-head green-button coolBeans" href="<?php the_sub_field('button_link'); ?>"><?php the_sub_field('button_text'); ?></a>
-						
-						<?php } else {
-							 echo $name;
-						} ?>
-						
+						<div class="paddedBox">						
+						<h1>FORM</h1>	
+
 						</div>
 					</div>
 		
-					<div class="box-2 flex flow-column"></div>
-										
-			</div>
-			
-			<div class="half-scren-right"><img src="<?php the_sub_field('image'); ?>"/></div>
-		</section>	
 		
+		
+					<div class="box-2 flex flow-column">
+						<div class="paddedBox numeralia white-content">
+							
+						<?php if( have_rows('numeralia') ): ?>
+							<?php while( have_rows('numeralia') ): the_row();?>		
+							
+								<h3><?php the_sub_field('title'); ?></h3>
+
+
+							<div class="numbers">
+							
+							<?php if( have_rows('numbers') ): ?>
+							<?php while( have_rows('numbers') ): the_row();?>
+							
+								<div class="numbers-row">
+									
+									<div class="value flex flow-column">
+										<h3><?php the_sub_field('value'); ?></h3>
+										<p><?php the_sub_field('subtext'); ?></p>
+									</div>
+									<div class="description">
+										<p><?php the_sub_field('description'); ?></p>
+									</div>
+							
+							</div>		
+								
+							<?php endwhile; ?>
+							<?php endif; ?>	
+
+	
+								
 	    <?php endwhile; ?>
 <?php endif; ?>	
+								
+
+								
+																
+								
+								
+							</div>
+							
+							
+							
+						</div>
+						
+						
+						
+						
+						
+						
+					</div>
+										
+			</div>			
+		</section>	
+		
+
 
 
 
@@ -116,8 +145,7 @@
 					
 			<div class="logo-slider">
 				<div class="logo-slider_container">
-
-					<div class="owl-carousel">
+					<div class="logo-slider_container-slider">
 						<?php if( have_rows('logos') ): ?>
 							<?php while( have_rows('logos') ): the_row(); ?>
 							    
@@ -128,7 +156,7 @@
 							    
 							<?php endwhile; ?>
 						<?php endif; ?>				
-
+					</div>
 			</div>
 		</div>
 
